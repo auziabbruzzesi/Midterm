@@ -28,6 +28,7 @@ public class Student_Test {
 
 	@BeforeClass
 	public static void setup(){
+		//Generate IDs for each student
 		UUID stu1id = UUID.randomUUID();
 		UUID stu2id = UUID.randomUUID();
 		UUID stu3id = UUID.randomUUID();
@@ -134,6 +135,7 @@ public class Student_Test {
 				
 				/*	Random rand = new Random();
 				int randomgrade = rand.nextInt((100-1)+1)+1;//assign a random grade from 1-100
+				en.setGrade(randomgrade);
 
 				System.out.print(randomgrade+"\n");*/
 				
@@ -154,13 +156,14 @@ public class Student_Test {
 				} 
 
 			//Calculate the GPA and AVG grade
+			//to find the GPA and AVG of another student, you would have to change the index eg. lstugr.get(1) for stu2
 			double sum_grades1 = 0;
 			double sum_credits1 = 0;
 			double sum_GWA1 = 0;
 			for(int f= 0; f<lstugr.get(0).size(); f++){
-				sum_grades1 += ((Enrollment) lstugr.get(0).get(f)).getGrade();//a sum of all grades in class
+				sum_grades1 += ((Enrollment) lstugr.get(0).get(f)).getGrade();//a sum of all grades in classes for a student
 				sum_credits1 += (sectionList.get(f).getGradePoints());//total number of credits taken
-				sum_GWA1 += ((sectionList.get(f).getGradePoints())*((Enrollment) lstugr.get(0).get(f)).getGrade()) ;
+				sum_GWA1 += ((sectionList.get(f).getGradePoints())*((Enrollment) lstugr.get(0).get(f)).getGrade()) ;// a sum of the (Grade*GradePoints)
 				
 				
 		}
