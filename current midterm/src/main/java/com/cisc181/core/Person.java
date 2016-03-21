@@ -105,14 +105,20 @@ public abstract class Person implements java.io.Serializable {
 	public void printPhoneNumber() throws PersonException{//CHECKS PHONE NUMBER FORMAT
 		
 
-	    String re1="(\\()";	// Any Single Character 1
-	    String re2="(\\d+)";	// Integer Number 1
-	    String re3="(\\))";	// Any Single Character 2
-	    String re4="(-)";	// Any Single Character 3
-	    String re5="(\\d+)";	// Integer Number 2
-	    String re6="(-)";	// Any Single Character 4
-	    String re7="(\\d+)";	// Integer Number 3
-	    String regex = (re1+re2+re3+re4+re5+re6+re7);//THE DESIRED PHONE-NUMBER FORMAT    
+		  String re1="(\\d)";	// Any Single Digit 1
+		  String re2="(\\d)";	// Any Single Digit 2
+		  String re3="(\\d)";	// Any Single Digit 3
+		  String re4="(-)";	    // Any Single Character 1
+		  String re5="(\\d)";	// Any Single Digit 4
+		  String re6="(\\d)";	// Any Single Digit 5
+		  String re7="(\\d)";	// Any Single Digit 6
+		  String re8="(-)";	    // Any Single Character 2
+		  String re9="(\\d)";	// Any Single Digit 7
+		  String re10="(\\d)";	// Any Single Digit 8
+		  String re11="(\\d)";	// Any Single Digit 9
+		  String re12="(\\d)";	// Any Single Digit 10
+		  
+	    String regex = (re1+re2+re3+re4+re5+re6+re7+re8+re9+re10+re11+re12); //THE DESIRED PHONE-NUMBER FORMAT    
 		
 		String pn = this.getPhone();//Sets pn equal to the phonenum of this instance
 		if (!Pattern.matches(regex, pn)){//if the pattern of pn does not match regex, throw new exc.
